@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load the data
-uploaded_file = '/mnt/data/StockAdvisor-scorecard-2025-01-07.csv'
+uploaded_file = 'workspaces/Motley_Fool/StockAdvisor-scorecard-2025-01-07.csv'
 data = pd.read_csv(uploaded_file)
 
 # Format Streamlit App
