@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 
 # Load the data
-uploaded_file = 'workspaces/Motley_Fool/StockAdvisor-scorecard-2025-01-07.csv'
-data = pd.read_csv(uploaded_file)
+uploaded_file = 'StockAdvisor-scorecard-2025-01-07.csv'
+try:
+    data = pd.read_csv(uploaded_file)
+except FileNotFoundError:
+    st.error("The file 'StockAdvisor-scorecard-2025-01-07.csv' was not found. Please ensure the file is in the correct directory.")
+    st.stop()
 
 # Format Streamlit App
 st.title("Stock Advisor Dashboard")
